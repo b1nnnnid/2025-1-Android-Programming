@@ -1,0 +1,82 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:text="홍길순 님"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnEditProfile"
+            android:text="내 정보 수정"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- 즐겨찾기 -->
+        <TextView
+            android:text="즐겨찾기"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp" />
+
+        <Button
+            android:id="@+id/btnFavoritesSitters"
+            android:text="찜한 아이돌보미"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnFavoritesFacilities"
+            android:text="저장한 복지시설"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- 설정 -->
+        <TextView
+            android:text="설정"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+
+        <Switch
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/switchDarkMode"
+            android:text="다크모드"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/switchAlarm"
+            android:text="알림 받기"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <SeekBar
+            android:id="@+id/seekFontSize"
+            android:max="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="글자 크기 조절" />
+
+        <Button
+            android:id="@+id/btnRegionSetting"
+            android:text="지역 설정"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

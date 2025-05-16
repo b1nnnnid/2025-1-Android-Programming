@@ -41,7 +41,7 @@
 ---
 
 ## 🗂️ 디렉토리 구조 (예시)
-
+```
 momcare-app/
 ├── src/
 │ ├── components/
@@ -53,36 +53,4 @@ momcare-app/
 ├── .env
 ├── App.js
 └── README.md
-
-yaml
-복사
-편집
-
----
-
-## 🚀 설치 및 실행 방법
-
-1. 프로젝트 클론
-
-```bash
-git clone https://github.com/yourusername/momcare-app.git
-cd momcare-app
-패키지 설치
-
-bash
-복사
-편집
-npm install
-환경 변수 설정 (.env)
-
-env
-복사
-편집
-REACT_APP_KAKAO_API_KEY=your_key_here
-REACT_APP_BACKEND_URL=http://localhost:8000
-앱 실행
-
-bash
-복사
-편집
-npm start
+```

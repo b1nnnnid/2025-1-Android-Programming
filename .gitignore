@@ -1,1 +1,44 @@
-local.properties
+# Gradle 빌드 결과물
+/build/
+/app/build/
+
+# Local configuration 파일 (개인 환경 설정)
+/local.properties
+
+# Android Studio 관련 파일들
+/.idea/
+/*.iml
+*.iws
+
+# Gradle Wrapper
+/gradle-wrapper.jar
+
+# 로그 파일
+*.log
+
+# Android Studio에서 자동 생성하는 캐시 및 인덱스 파일
+/.gradle/
+/captures/
+/.externalNativeBuild/
+
+# NDK 빌드 파일
+obj/
+
+# Google 서비스 설정 파일 (보안에 민감할 수 있음)
+/google-services.json
+
+# IntelliJ IDEA 파일
+*.ipr
+*.iws
+*.iml
+
+# 사용자별 설정 파일
+*.swp
+*~
+
+# 빌드 아티팩트
+*.apk
+*.ap_
+
+# 기타
+.DS_Store

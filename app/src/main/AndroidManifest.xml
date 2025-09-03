@@ -2,7 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <queries>
+        <package android:name="com.kakao.talk" />
+        <package android:name="com.kakao.story" />
+    </queries>
+
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,30 +20,50 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MomApp"
         tools:targetApi="31">
+
+        <!-- SplashActivity가 앱 시작 시 가장 먼저  -->
         <activity
-            android:name=".SettingFragment"
-            android:exported="false" />
-        <activity
-            android:name=".FacilityFragment"
-            android:exported="false" />
-        <activity
-            android:name=".CareFragment"
-            android:exported="false" />
-        <activity
-            android:name=".HomeFragment"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MomApp">
+            android:name=".SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
+        <activity
+            android:name=".ui.theme.PostDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CareDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FamilyDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".LauncherActivity"
+            android:exported="true" />
+
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity" /> <!-- 카카오 로그인 리다이렉트 처리용 액티비티 -->
+
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="oauth"
+                    android:scheme="@string/kakao_app_key" />
             </intent-filter>
         </activity>
     </application>

@@ -1,87 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/homeScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#ffffff"
+    android:background="?android:attr/windowBackground"
     tools:context=".HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-        <!-- 상단 지역 설정 및 알림 버튼 -->
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
-            android:layout_marginBottom="16dp">
+            android:text="원하는 서비스를 빠르게 찾아보세요!"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
 
-            <TextView
-                android:id="@+id/tvRegion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="위례동 ▼"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_weight="1"/>
-
-        </LinearLayout>
-
-        <!-- 추천 카드 영역 (예: 인기 기관 추천) -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="24dp"
-            android:padding="12dp"
-            android:background="@android:color/white"
-            android:elevation="4dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="오늘의 추천"
-                android:textColor="#FF8AAE"
-                android:textStyle="bold"
-                android:textSize="18sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:id="@+id/tvInstitutionName"
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
-                    android:layout_height="wrap_content"
-                    android:text="위례아이돌봄센터"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/tvInstitutionDescription"
-                    android:layout_width="0dp"
-                    android:layout_weight="3"
-                    android:layout_height="wrap_content"
-                    android:text="바로연계가능 돌보미들이 많아요!"
-                    android:textSize="14sp"
-                    android:textColor="#666666"
-                    android:paddingStart="8dp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- 주요 버튼: 돌보미 찾기 / 시설 보기 -->
-
+        <!-- 아이돌보미 찾기 버튼 -->
         <Button
             android:id="@+id/btnFindSitter"
             android:layout_width="match_parent"
@@ -91,70 +35,162 @@
             android:textColor="@android:color/white"
             android:drawableStart="@android:drawable/ic_menu_my_calendar"
             android:padding="12dp"
-            android:text="아이돌보미 기관 찾기"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:text="아이돌봄시설/돌보미 찾기"
             android:textAllCaps="false" />
 
         <Button
-            android:backgroundTint="#FF8AAE"
-            android:textColor="@android:color/white"
             android:id="@+id/btnFindFacility"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="한부모가족 복지시설 보기"
             android:layout_marginTop="12dp"
+            android:backgroundTint="#FF8AAE"
+            android:textColor="@android:color/white"
             android:drawableStart="@android:drawable/ic_menu_info_details"
             android:padding="12dp"
-            android:textAllCaps="false"/>
-
-        <!-- 서브 기능: 기타 관련 시설 보기 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="추천 서비스"
             android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="8dp"/>
-
-        <Button
-            android:id="@+id/btnCenter1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="여성새로일하기센터"
-            android:drawableStart="@android:drawable/ic_menu_agenda"
-            android:padding="12dp"
+            android:textSize="15dp"
+            android:text="한부모가족 복지시설 보기"
             android:textAllCaps="false"/>
 
-        <Button
-            android:id="@+id/btnCenter2"
+        <!-- 아이콘 + 텍스트 모음 -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="가족지원센터"
-            android:drawableStart="@android:drawable/ic_menu_gallery"
-            android:padding="12dp"
-            android:textAllCaps="false"/>
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
 
-        <Button
-            android:colo
-            android:id="@+id/btnCenter3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="공동육아나눔터"
-            android:drawableStart="@android:drawable/ic_menu_compass"
-            android:padding="12dp"
-            android:textAllCaps="false"
-            android:layout_marginBottom="16dp"/>
+            <!-- 대한사회복지회 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="12dp">
 
-        <ImageButton
-            android:id="@+id/btnAlarm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@android:drawable/ic_dialog_info"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="알림" />
+                <ImageView
+                    android:id="@+id/btnKorea"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/baseline_business_center_24"
+                    app:tint="#FF4081" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="대한사회복지회"
+                    android:textSize="12sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- 여성가족부 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="12dp">
+
+                <ImageView
+                    android:id="@+id/btnWomen"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/web"
+                    app:tint="#FF4081" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="여성가족부"
+                    android:textSize="12sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- 유튜브 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="12dp">
+
+                <ImageView
+                    android:id="@+id/btnYouTube"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/baseline_youtube_searched_for_24"
+                    app:tint="#FF4081" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="한부모 기준"
+                    android:textSize="12sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- 복지로 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="12dp">
+
+                <ImageView
+                    android:id="@+id/btnBokjiro"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/person"
+                    app:tint="#FF4081" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="복지로"
+                    android:textSize="12sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- 아이돌봄 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/btnIdolbom"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/child"
+                    app:tint="#FF4081" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아이돌봄"
+                    android:textSize="12sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 앱 로고 -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/momlogo"
+            android:layout_marginTop="30dp"/>
 
     </LinearLayout>
+
 </androidx.core.widget.NestedScrollView>

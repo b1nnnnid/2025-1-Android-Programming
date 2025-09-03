@@ -1,11 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/singleParentFacilitySearchLayout"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sitterScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FFFFFF">
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/sitterSearchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="?android:attr/windowBackground">
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,27 +29,16 @@
         android:gravity="center_vertical"
         android:weightSum="3">
 
-        <!-- 지역 검색 -->
-        <EditText
-            android:id="@+id/etSearchRegion"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:hint="지역 입력"
-            android:imeOptions="actionSearch"
-            android:inputType="text"
-            android:padding="8dp"
-            android:background="@android:drawable/edit_text"
-            android:layout_marginEnd="8dp" />
 
         <!-- 시설명 검색 -->
         <EditText
             android:id="@+id/etSearchFacilityName"
-            android:layout_width="0dp"
+            android:layout_width="150dp"
             android:layout_weight="1.5"
             android:layout_height="wrap_content"
-            android:hint="시설명 검색"
+            android:hint="지역/기관명 검색"
             android:imeOptions="actionSearch"
+            android:textColor="@color/colorText"
             android:inputType="text"
             android:padding="8dp"
             android:background="@android:drawable/edit_text"
@@ -52,11 +46,11 @@
 
         <!-- 필터 버튼 -->
         <Button
-            android:id="@+id/btnFilter"
-            android:layout_width="0dp"
+            android:id="@+id/btnSearch_f"
+            android:layout_width="30dp"
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
-            android:text="필터"
+            android:text="검색"
             android:backgroundTint="#FF4081"
             android:textColor="#FFFFFF" />
     </LinearLayout>
@@ -72,18 +66,19 @@
         android:id="@+id/tvSearchHint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="검색어 입력 또는 필터를 통해 원하는 시설을 찾아보세요."
-        android:textColor="#666666"
+        android:text="지역 또는 기관명을 검색해보세요."
+        android:textColor="?android:attr/textColorSecondary"
         android:textSize="14sp"
         android:gravity="center"
         android:padding="12dp" />
 
-    <!-- 최근 본 시설 -->
+    <!-- 저장한 시설 -->
     <TextView
-        android:id="@+id/tvRecentViewedTitle"
+        android:id="@+id/savedViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="최근 본 시설"
+        android:text="저장한 시설"
+        android:textColor="@color/colorText"
         android:textSize="16sp"
         android:textStyle="bold"
         android:paddingStart="8dp"
@@ -91,7 +86,7 @@
         android:paddingBottom="8dp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerRecentViewed"
+        android:id="@+id/savedRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:nestedScrollingEnabled="false"
@@ -104,6 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="내 위치 근처 시설"
+        android:textColor="@color/colorText"
         android:textSize="16sp"
         android:textStyle="bold"
         android:paddingStart="8dp"
@@ -127,5 +123,5 @@
         android:clipToPadding="false"
         android:paddingBottom="16dp" />
 
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

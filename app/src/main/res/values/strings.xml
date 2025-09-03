@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MomApp</string>
+    <string name="drawer_open">메뉴 열기</string>
+    <string name="drawer_close">메뉴 닫기</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="kakao_app_key">aa2360733f08bda12795557e5cdd141e</string>
+
 </resources>

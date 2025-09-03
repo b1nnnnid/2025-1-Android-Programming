@@ -10,90 +10,79 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
             android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
             android:text="봉미선 님, 환영합니다."
             android:textColor="#FF8AAE"
-            android:textStyle="bold"
             android:textSize="25sp"
-            android:layout_marginBottom="8dp" />
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnEditProfile"
-
-            android:text="내 정보 수정"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <!-- 즐겨찾기 -->
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="즐겨찾기"
-            android:textStyle="bold"
-            android:layout_marginTop="24dp" />
-
-        <Button
-            android:backgroundTint="#FF8AAE"
-            android:textColor="@android:color/white"
-            android:id="@+id/btnFavoritesSitters"
-            android:text="찜한 아이돌보미"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:backgroundTint="#FF8AAE"
-            android:textColor="@android:color/white"
-            android:id="@+id/btnFavoritesFacilities"
-            android:text="저장한 복지시설"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <!-- 설정 -->
+        <!-- 설정 제목 -->
         <TextView
             android:text="설정"
             android:textStyle="bold"
             android:layout_marginTop="30dp"
-            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
-            android:layout_marginBottom="20dp"/>
+            android:layout_height="wrap_content" />
 
         <Switch
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
             android:id="@+id/switchDarkMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="다크모드"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Switch
-            android:layout_marginTop="10dp"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
             android:id="@+id/switchAlarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="알림 받기"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-
-        <SeekBar
-            android:layout_marginTop="20dp"
-            android:id="@+id/seekFontSize"
-            android:max="2"
+        <Switch
+            android:id="@+id/switchAutoLogin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="자동 로그인"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
+        <!-- 글자 크기 조절 라벨 -->
         <TextView
-            android:layout_height="match_parent"
+            android:id="@+id/tvFontSizeLabel"
             android:layout_width="match_parent"
-            android:text="글자 크기 조절" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="글자 크기 조절"
+            android:textStyle="bold" />
 
-        <Button
-            android:layout_marginTop="30dp"
-            android:id="@+id/btnRegionSetting"
-            android:text="지역 설정"
+        <!-- 글자 크기 조절 SeekBar -->
+        <SeekBar
+            android:id="@+id/seekFontSize"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:max="2"
+            android:layout_marginTop="8dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/momlogotext"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="40dp"/>
+        <!-- 로그아웃 버튼 -->
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="로그아웃"
+            style="@style/ButtonTint"
+            android:layout_marginTop="30dp" />
 
     </LinearLayout>
 </ScrollView>

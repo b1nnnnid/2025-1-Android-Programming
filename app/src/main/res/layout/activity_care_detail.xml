@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="?android:attr/windowBackground"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <!-- 시설명: 남은 공간만 차지하고 버튼 공간은 남겨두기 -->
+            <TextView
+                android:id="@+id/tvChildCareInstNm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="시설명"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="#FF4081"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <!-- 버튼: 고정된 크기로 우측에 고정 -->
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:text="+"
+                style="@style/ButtonTint"
+                android:textColor="#FFFFFF"
+                android:textSize="24dp"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 1. 기준연월 -->
+        <TextView
+            android:text="기준 연월" style="@style/Label" />
+        <TextView
+            android:id="@+id/tvCrtrYm" style="@style/Content" />
+
+        <!-- 2. 기관번호 -->
+        <TextView
+            android:text="기관 번호"
+            style="@style/Label" />
+        <TextView
+            android:id="@+id/tvChildCareInstNo" style="@style/Content" />
+
+
+        <!-- 4. 상위 기관번호 -->
+        <TextView
+            android:text="상위 기관 번호" style="@style/Label" />
+        <TextView
+            android:id="@+id/tvUpChildCareInstNo" style="@style/Content" />
+
+        <!-- 5. 상위 기관명 -->
+        <TextView
+            android:text="상위 기관명" style="@style/Label" />
+
+        <TextView
+            android:id="@+id/tvUpChildCareInstNm" style="@style/Content" />
+
+        <!-- 6. 전체 돌보미 수 -->
+        <TextView
+            android:text="전체 돌보미 수" style="@style/Label" />
+        <TextView
+            android:id="@+id/tvThmmSittrCnt"
+            style="@style/Content" />
+
+        <!-- 7. 함께 돌봄 가능 돌보미 수 -->
+        <TextView
+            android:text="함께 돌봄 가능 돌보미 수" style="@style/Label" />
+        <TextView
+            android:id="@+id/tvThmmPttgthTypePsbltSittrCnt" style="@style/Content" />
+
+        <!-- 8. 자격증 보유 돌보미 수 -->
+        <TextView
+            android:text="자격증 보유 돌보미 수" style="@style/Label" />
+        <TextView
+            android:id="@+id/tvThmmCrtftPssnSittrCnt" style="@style/Content" />
+
+        <!-- 9. 즉시 연결 가능 돌보미 수 -->
+        <TextView
+            android:text="즉시 연결 가능 돌보미 수" style="@style/Label" />
+        <TextView
+            android:id="@+id/tvThmmStrhtLinkPsbltSittrCnt" style="@style/Content" />
+
+        <!-- 10. 누적 자격증 보유 돌보미 수 -->
+        <TextView
+            android:text="누적 자격증 보유 돌보미 수" style="@style/Label" />
+        <TextView
+            android:id="@+id/tvAcmltCrtftPssnSittrCnt" style="@style/Content" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

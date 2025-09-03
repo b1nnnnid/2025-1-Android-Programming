@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.MomApp" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- 다크모드일 때 색상 변경 -->
+    <style name="Theme.MomApp" parent="Theme.MaterialComponents.DayNight.NoActionBar"/>
+
+
+    <style name="ToolbarIconColor" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">#FFFFFF</item>
+    </style>
+    <style name="Label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FF8AAE</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="Content">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">-</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:layout_marginBottom">12dp</item>
+    </style>
+
+    <style name="ActionContent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#1E88E5</item> <!-- 파란색 -->
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ButtonTint">
+        <item name="android:backgroundTint">#FF4081</item>
+    </style>
+
+
+
 </resources>
